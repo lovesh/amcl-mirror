@@ -1,16 +1,16 @@
 [package]
-name = "amcl"
-version = "0.2.0"
-authors = ["Nikita Khateev <nikita.khateev@dsr-corporation.com>"]
+name = "miracl_amcl"
+version = "3.2.0"
+authors = ["Michael Scott <mike.scott@miracl.com>"]
 
-description = "The Apache Milagro Cryptographic Library (version 3)"
+description = "The Apache Milagro Cryptographic Library (version 3.2)"
 license = "Apache-2.0"
-repository = "https://github.com/milagro-crypto/amcl"
+repository = "https://github.com/miracl/amcl"
 
 [dependencies]
 
 [lib]
-name = "amcl"
+name = "amcl_miracl"
 path = "src/lib.rs"
 
 [features]
