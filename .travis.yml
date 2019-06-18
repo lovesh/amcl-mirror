@@ -1,18 +1,12 @@
-dist: xenial
-language: generic
-
-env:
-  matrix:
-    - AMCL_LANG=cpp
-    - AMCL_LANG=java
-    - AMCL_LANG=js
-    - AMCL_LANG=rust
-    - AMCL_LANG=swift
-    - AMCL_LANG=wasm-c
-    - AMCL_LANG=wasm-rust
-
+language: rust
+rust:
+  - stable
+before_script: cd version3/rust
 script:
-  - ./scripts/travis.sh
-
-notifications:
-  email: false
+  - cargo build --all-features
+deploy:
+  provider: cargo
+  token:
+    secure: "K+4XKQy1ZcOBiCbRUT4G46B7a+KCrXVaZq4tJAovXsrSm5HIYhmJNE/Z12G+zQmlnS+OsOkVbc/miP3pLOo3P5NazJfhbbcwGHK5+xHai0yLC56sm+NjMed5331rNRO0eVZ+SEtN/pD8REI8kROrF4IQctiOLSFXQbNSCeZFYzak3RO+eumW1X+4JzE97/MZ2r7c8vQvxlRLjKRq2bCv3JiRx1p7IB1qYFP9NxU0MQXhsi76bwXx4XBgKHSVpY2R49wU2+V6N/auM4iR3+T800OcIOc0szU4pXK+p87ftPfDNV8ghQnFF0YCF9l9YcFMGtbwQLFz/i2X0bYXau+c4ZXFJ1RX4/gBGMfJPEPPYw8wtgjGwwdMexb031yvCsmYGAMRsk7QD9A0iX6RpWwKrbpLmEDnYfjh0mv6qiPZ1pcYq6gWo8C1BVwYIwGJVr7Rbcfzr0nFtLpe5TsJgiD915RYVq72ErDALosLa8nVgES9WQpBCfHQDVAoZIs/r+NLTYQuZtB21EnfE5oa2E/IkqLTdG0v+XzOqWlvWpy5rhEG3/C4YRKf6+vCGWqnjSqU8YTDpsPPlti2og5zE6EQ0qbzrRbuGg1jNgx7ycvinwRdN2p7hq0D8nFGqQUwDuDAkdpbTSA3I86fKxLeGoMaqd6eETeIi5E0ADQ2p/r1ZJs="
+  on:
+     branch: master
