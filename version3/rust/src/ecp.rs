@@ -131,10 +131,6 @@ impl ECP {
         return E;
     }
 
-    pub fn new_from_fps(x: FP, y: FP, z: FP) -> ECP {
-        ECP { x, y, z }
-    }
-
     /* set this=O */
     pub fn inf(&mut self) {
         self.x.zero();
