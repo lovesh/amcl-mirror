@@ -89,10 +89,6 @@ impl FP {
         return f;
     }
 
-    pub fn new_from_big_xes(x: BIG, xes: i32) -> FP {
-        return FP {x, xes};
-    }
-
     pub fn nres(&mut self) {
         if MODTYPE != ModType::PSEUDO_MERSENNE && MODTYPE != ModType::GENERALISED_MERSENNE {
             let r=BIG::new_ints(&rom::R2MODP);

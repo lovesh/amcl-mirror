@@ -92,10 +92,6 @@ impl FP2 {
         return f;
     }
 
-    pub fn new_from_fp2(a: FP, b: FP) -> FP2 {
-        return FP2 {a, b};
-    }
-
     pub fn new_big(c: &BIG) -> FP2 {
         let mut f = FP2::new();
         f.a.copy(&FP::new_big(c));
