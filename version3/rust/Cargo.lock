@@ -2,5 +2,5 @@
 # It is not intended for manual editing.
 [[package]]
 name = "miracl_amcl"
-version = "3.2.2"
+version = "3.2.5"
 
